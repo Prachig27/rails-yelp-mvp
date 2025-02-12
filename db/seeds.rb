@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts 'Creating restaurants...'
+
+5.times do
+  Restaurant.create!(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: Restaurant::CATEGORIES.sample,
+    image_url: "https://source.unsplash.com/400x300/?restaurant,food" # Assign a placeholder image
+  )
+end
+
+puts 'Done!'
